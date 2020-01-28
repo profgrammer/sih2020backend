@@ -1,0 +1,9 @@
+{
+    "env": {
+        "TWILIO_ACCOUNT_SID":"ACcbd8d78bf78669ed27cc6502d6df8bf8",
+        "TWILIO_AUTH_TOKEN":"8d4d1c81d57f4fdb143244e2952e4688",
+        "TWILIO_NUMBER":"+17868377782",
+        "TWILIO_NOTIFY_SID": "IS9a92b16e3d94b3e4062a1de8acadb98a",
+        "SENDGRID_API_KEY": "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"
+    }
+}
