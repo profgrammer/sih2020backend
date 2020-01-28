@@ -96,7 +96,8 @@ app.get('/download', (req, res) => {
     })
 })
 
-app.get('/oauth/callback', (req, res) => {
+app.post('/oauth/callback', (req, res) => {
+    console.log(req.body);
     res.send('hello');
 });
 
