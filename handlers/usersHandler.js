@@ -8,9 +8,10 @@ const router = express.Router();
 router.post('/login', (req, res) => {
     const profile = req.body.profileObj;
     const googleId = profile.googleId;
-    const user = User.findOne({googleId}).then(user => {
-        if(user) {
-            const token = signToken(user);
+    User.findOne({googleId}).then(user1 => {
+        console.log(user1);
+        if(user1) {
+            const token = signToken(user1.toJSON());
             res.json({token});
         } else {
             const newuser = new User();
@@ -21,7 +22,8 @@ router.post('/login', (req, res) => {
             newuser.email = profile.email;
 
             newuser.save().then(user => {
-                const token = signToken(user);
+                console.log(user);
+                const token = signToken(user.toJSON());
                 res.json({token});
             })
         }
