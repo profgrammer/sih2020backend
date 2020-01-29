@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const {signToken, verifyToken} = require('./jwtHandler');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
