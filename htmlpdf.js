@@ -39,20 +39,6 @@ const generateReport = student => {
 } 
 
 
-const express = require('express');
-const app = express();
-const bp = require('body-parser');
-app.use(bp.json());
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    if(req.method === 'OPTIONS'){
-      res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-      return res.status(200).json({});
-    }
-    next();
-});  
 
 app.get('/download', (req, res) => {
     const student = req.body.student;
@@ -100,6 +86,3 @@ app.post('/oauth/callback', (req, res) => {
     console.log(req.body);
     res.send('hello');
 });
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`listening on port ${port}`));
