@@ -5,7 +5,11 @@ const bp = require('body-parser');
 const morgan = require('morgan');
 app.use(bp.json()); 
 
-mongoose.connect(process.env.MONGO_DBSTRING, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_DBSTRING, { useNewUrlParser: true }).then(() => {
+    console.log("Connected to Database");
+}).catch((err) => {
+    console.log("Not Connected to Database ERROR! ", err);
+});
 
 const User = require('./models/User');
 

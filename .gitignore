@@ -1,4 +1,4 @@
 *.pdf
 /node_modules
 .env
-nodemon.json
+*.json
