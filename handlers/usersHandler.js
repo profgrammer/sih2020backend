@@ -13,6 +13,7 @@ router.post('/login', (req, res) => {
             res.json({token});
         } else {
             const newuser = new User();
+            newuser._id = mongoose.Types.ObjectId(); 
             newuser.googleId = googleId;
             newuser.firstName = profile.givenName;
             newuser.lastName = profile.familyName;
