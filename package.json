@@ -20,7 +20,7 @@
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
     "node-env-run": "^3.0.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "nodemon": "^2.0.2",
     "twilio": "^3.39.3"
   }
